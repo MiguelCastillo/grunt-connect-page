@@ -4,31 +4,22 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-    "connect": {
-      keepalive: {
-        options: {
-          port: 8989,
-          host: "localhost",
-          keepalive: true,
-          open: "http://localhost:8989/index.html",
-          livereload: true
-        }
-      }
-    },
-    "concurrent": {
-      "build": {
-        tasks: ["connect:keepalive", "watch:build"],
-        options: {
-          logConcurrentOutput: true
-        }
-      }
-    },
     "watch": {
       "build": {
         files: ["src/**/*.js", "*.js"],
         tasks: ["build"],
         options: {
           livereload: true
+        }
+      }
+    },
+    "connect": {
+      keepalive: {
+        options: {
+          port: 8989,
+          host: "localhost",
+          keepalive: true,
+          open: "http://localhost:8989/index.html"
         }
       }
     },
@@ -41,6 +32,14 @@ module.exports = function(grunt) {
             "detectGlobals": false,
             "standalone": "connectpage"
           }
+        }
+      }
+    },
+    "concurrent": {
+      "build": {
+        tasks: ["connect:keepalive", "watch:build"],
+        options: {
+          logConcurrentOutput: true
         }
       }
     }
