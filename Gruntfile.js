@@ -58,6 +58,6 @@ module.exports = function(grunt) {
   //
   // Register tasks
   //
-  grunt.registerTask("serve", ["concurrent:build"]);
+  grunt.registerTask("serve", ["build", "concurrent:build"]);
   grunt.registerTask("build", ["browserify:build"]);
 };
