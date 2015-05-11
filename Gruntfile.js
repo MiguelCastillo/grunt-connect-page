@@ -4,12 +4,15 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-    "watch": {
+    "browserify": {
       "build": {
-        files: ["src/**/*.js", "*.js"],
-        tasks: ["build"],
+        src: ["src/<%= pkg.name %>.js"],
+        dest: "dist/<%= pkg.name %>.js",
         options: {
-          livereload: true
+          browserifyOptions: {
+            "detectGlobals": false,
+            "standalone": "connectpage"
+          }
         }
       }
     },
@@ -23,15 +26,12 @@ module.exports = function(grunt) {
         }
       }
     },
-    "browserify": {
+    "watch": {
       "build": {
-        src: ["src/<%= pkg.name %>.js"],
-        dest: "dist/<%= pkg.name %>.js",
+        files: ["src/**/*.js", "*.js"],
+        tasks: ["build"],
         options: {
-          browserifyOptions: {
-            "detectGlobals": false,
-            "standalone": "connectpage"
-          }
+          livereload: true
         }
       }
     },
