@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    concurrent: {
+    "concurrent": {
       "build": {
         tasks: ["connect:keepalive", "watch:build"],
         options: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {
+    "watch": {
       "build": {
         files: ["src/**/*.js", "*.js"],
         tasks: ["build"],
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    browserify: {
+    "browserify": {
       "build": {
         src: ["src/<%= pkg.name %>.js"],
         dest: "dist/<%= pkg.name %>.js",
