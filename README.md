@@ -52,4 +52,4 @@ There are lots of Grunt tasks out there, but here are the ones I most frequently
 - [grunt concurrent](https://github.com/sindresorhus/grunt-concurrent) - Run multiple tasks concurrently
 - [grunt jshint](https://github.com/gruntjs/grunt-contrib-jshint) - Lint you source file; static analisys
 - [grunt release](https://github.com/geddski/grunt-release) - Updates package.json, publishes to github and npm
-- [grunt uglify](https://github.com/gruntjs/grunt-contrib-uglify) - Minifies JavaScript ans generates source maps
+- [grunt uglify](https://github.com/gruntjs/grunt-contrib-uglify) - Minifies JavaScript and generates source maps
